@@ -7,6 +7,8 @@ const TodoList = () => {
 	const [task, setTask] = useState("");
 	const [list, setList] = useState([]);
 
+	
+
 	//Hooks
 	useEffect(() => {
 		fetch("https://assets.breatheco.de/apis/fake/todos/user/Antoniomorales", {
@@ -53,13 +55,12 @@ const TodoList = () => {
 	};
 
 	const cleanList = () => {
-		let delTodo = list.splice(list.length);
-		setList(delTodo);
-		apiUpdate();
-	};
+		setList([]); // Asignamos array vacio para la lista de tareas
+		apiUpdate([]); 
+	  };
 
 	const removeTask = (index) => {
-		const newArray = list.filter((item, i) => i != index);
+		const newArray = list.filter((item, i) => i !== index); // Operador de desigualdad estricta 
 		setList(newArray);
 		apiUpdate();
 	};

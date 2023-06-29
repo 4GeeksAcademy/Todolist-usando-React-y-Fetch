@@ -4,20 +4,21 @@ import React from "react";
 // //Import proptypes
 import Proptypes from "prop-types";
 
-const Task = (props) => {
+//Desestructuramos para hacer codigo mas legible
+const Task = ({ key, task, removeTask }) => {
 	return (
-		<>
-			<li key={props.key} className="list-element">
-				{props.task}
-				<button
-					className="d-inline my-2 mx-3 btn btn-danger"
-					onClick={props.removeTask}>
-					Delete
-				</button>
-			</li>
-		</>
+	  <>
+		<li key={key} className="list-element">
+		  {task}
+		  <button
+			className="d-inline my-2 mx-3 btn btn-danger"
+			onClick={removeTask}>
+			Delete
+		  </button>
+		</li>
+	  </>
 	);
-};
+  };
 
 Task.propTypes = {
 	key: Proptypes.number,
