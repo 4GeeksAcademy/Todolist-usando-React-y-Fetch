@@ -26,6 +26,12 @@ const TodoList = () => {
 			});
 	}, []);
 
+
+// agregamos un 2 useEffect para que la actualizacion de la lista se envie a la API
+	useEffect(() => {
+		apiUpdate();
+	  }, [list]);
+
 	//Functions
 	const apiUpdate = () => {
 		fetch("https://assets.breatheco.de/apis/fake/todos/user/Antoniomorales", {

@@ -4,7 +4,7 @@ import React from "react";
 // //Import proptypes
 import Proptypes from "prop-types";
 
-//Desestructuramos para hacer codigo mas legible
+//Desestructuramos para hacer codigo más legible
 const Task = ({ key, task, removeTask }) => {
 	return (
 	  <>
